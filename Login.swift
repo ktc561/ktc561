@@ -23,31 +23,38 @@ struct Login: View {
                 .padding(25)
             HStack(spacing: 15){
                 
-                TextField("+1", text: $accountCreation.code)
-                    .modifier(PlaceholderStyle(showPlaceHolder: accountCreation.code.isEmpty,
-                                               placeholder: "placeholder")
-                              
-                              
+                TextField("", text: $accountCreation.code)
+                    .modifier(
+                        PlaceholderStyle(
+                            showPlaceHolder: accountCreation.code.isEmpty,
+                            placeholder: "+1",
+                            placeholderColor: Color.black.opacity(0.75)
+                        )
                     )
                     
+                    .frame(width: 60)
+                    .padding(.vertical)
+                    .padding(.horizontal)
+                    .background(Color.white)
+                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 5, y: 5)
+                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
+                
+                
+                TextField("", text: $accountCreation.phNumber)
+                    .modifier(
+                        PlaceholderStyle(
+                            showPlaceHolder: accountCreation.phNumber.isEmpty,
+                            placeholder: "Mobile Number",
+                            placeholderColor: Color.black.opacity(0.75)
+                        )
+                    )
                     
                     .padding(.vertical)
                     .padding(.horizontal)
-                    .frame(width: 60)
                     .background(Color.white)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: 5, y: 5)
                     .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
                 
-                
-                TextField("Mobile Number", text: $accountCreation.phNumber)
-                    .padding(.vertical)
-                    .padding(.horizontal)
-                    .background(Color.white)
-                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: 5, y: 5)
-                    .shadow(color: Color.black.opacity(0.05), radius: 5, x: -5, y: -5)
-                
-                
-                Spacer(minLength: 0)
             }
             .padding(.horizontal)
             .padding(.top)

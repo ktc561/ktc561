@@ -34,16 +34,16 @@ class AccountCreationViewModel: ObservableObject {
 public struct PlaceholderStyle: ViewModifier {
     var showPlaceHolder: Bool
     var placeholder: String
+    var placeholderColor: Color
     
     public func body(content: Content) -> some View {
         ZStack(alignment: .leading) {
             if showPlaceHolder {
                 Text(placeholder)
-                    .padding(.horizontal, 15)
+                    .foregroundColor(placeholderColor)
             }
+            
             content
-                .foregroundColor(Color.white)
-                .padding(5.0)
         }
     }
 
